@@ -44,7 +44,7 @@ const packages = [
   },
   {
     name: "FUJI",
-    price: "Rp.10.000.000",
+    price: "Rp.30/50.000.000",
     features: [
       "Wedding Konsep & Idea",
       "Pembuatan Rundown",
