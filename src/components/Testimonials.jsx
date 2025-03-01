@@ -48,8 +48,13 @@ const Testimonials = () => {
 
         <Swiper
           modules={[Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={3}
+          spaceBetween={20}
+          slidesPerView={1} // Default untuk mobile
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
           pagination={{ clickable: true }}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           loop
@@ -57,8 +62,8 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-between min-h-[200px]">
-                <div className="text-xl font-semibold text-[#C49061]">
+              <div className="bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-between min-h-[220px] max-w-sm mx-auto">
+                <div className="text-xl font-semibold text-[#C49061] text-center">
                   {testimonial.name}
                 </div>
                 <div className="flex my-2">
@@ -66,7 +71,7 @@ const Testimonials = () => {
                     <FaStar key={i} className="text-yellow-500" />
                   ))}
                 </div>
-                <p className="text-gray-600 text-center">
+                <p className="text-gray-600 text-center text-sm md:text-base">
                   &#34;{testimonial.content}&#34;
                 </p>
               </div>
